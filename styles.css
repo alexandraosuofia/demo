@@ -23,6 +23,50 @@ header{
     justify-content: space-between;
 }
 
+header .open-slide{
+    display: none;
+}
+
+.open-slide i{
+    color: var(--blue);
+}
+
+header .side-nav{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right:0;
+    background-color:var(--blue);
+    opacity: 0.9;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.4s;
+}
+
+.side-nav .close-btn{
+    position: absolute;
+    top: 0;
+    right: 22px;
+    font-size: 36px; 
+    margin-right: 70%; 
+}
+
+.side-nav a{
+    display: block;
+    text-decoration: none;
+    padding: 20px;
+    text-align: center;
+    color: black;
+    font-size: 12px;
+    transition: 0.3s;
+}
+
+.side-nav a:hover{
+    transform: translate(0, -10px);
+}
+
 .logo{
     display: flex;
     align-items: center;
@@ -61,6 +105,12 @@ nav ul a{
     color: black;
 }
 
-@media (max-width:578px) {
+@media (max-width:768px) {
+header nav{
+    display: none;
+}
 
+header .open-slide{
+    display: contents;
+}
 }
