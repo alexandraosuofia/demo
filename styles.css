@@ -12,10 +12,11 @@ box-sizing: border-box;
 body{
 font-family: 'Mulish', sans-serif;
 font-family: 'Roboto', sans-serif;
+width: 80%;
+margin: 0 auto;
 }
 
 header{
-    width: 80%;
     margin: 0 auto;
     height: 10vh;
     display: flex;
@@ -105,6 +106,64 @@ nav ul a{
     color: black;
 }
 
+/* section 1 */
+.intro{
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.intro-text{
+    margin-right: 50px;
+}
+
+.intro-text h1{
+    font-weight: 700;
+    font-size: 40px;
+}
+ .intro-text p{
+    font-size: 12px;
+    margin-top: 20px;
+ }
+
+ .intro-text a{
+    display:block;
+    text-decoration: none;
+    padding: 10px;
+    background-color: var(--blue);
+    color: white;
+    text-align: center;
+    margin: 20px 0;
+    width: 150px;
+    border-radius: 20px;
+ }
+.intro-img{
+    max-width: 500px;
+}
+
+.intro-img img{
+    width: 100%;
+}
+
+/* section 2  */
+.services{
+    margin: 20px;
+}
+.services-intro{
+    text-align: center;
+}
+
+/* .services-intro h1::after{
+    content: '';
+    width: 56px;
+    height: 2px;
+    position: absolute;
+    background-color: var(--gray);
+    bottom: 0;
+    left: 0;
+} */
+
+/* media queries */
 @media (max-width:768px) {
 header nav{
     display: none;
@@ -113,4 +172,24 @@ header nav{
 header .open-slide{
     display: contents;
 }
+}
+
+@media (max-width: 576px){
+ .intro{
+    flex-direction: column;
+ }
+
+ .intro-text{
+    margin: 0 auto;
+    /* text-align: center; */
+ }
+
+ .intro-img{
+    max-width: 300px;
+    margin: 15px auto;
+ }
+
+ .intro-img img{
+width: 100%;
+ }
 }
