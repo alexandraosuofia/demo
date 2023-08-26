@@ -7,6 +7,7 @@ box-sizing: border-box;
 :root{
     --blue: rgba(69, 143, 246, 1);
     --gray: rgba(31, 21, 52, 1);
+
 }
 
 body{
@@ -14,6 +15,7 @@ font-family: 'Mulish', sans-serif;
 font-family: 'Roboto', sans-serif;
 width: 80%;
 margin: 0 auto;
+overflow-x: hidden;
 }
 
 header{
@@ -126,7 +128,8 @@ nav ul a{
     margin-top: 20px;
  }
 
- .intro-text a{
+ /* cta-btn */
+.cta{
     display:block;
     text-decoration: none;
     padding: 10px;
@@ -137,6 +140,14 @@ nav ul a{
     width: 150px;
     border-radius: 20px;
  }
+
+ .btn{
+background-color: transparent;
+color: var(--blue);
+border: 1px solid var(--blue);
+font-size: 12px;
+ }
+
 .intro-img{
     max-width: 500px;
 }
@@ -145,23 +156,145 @@ nav ul a{
     width: 100%;
 }
 
-/* section 2  */
+/* services section */
 .services{
-    margin: 20px;
+    margin: 30px;
 }
 .services-intro{
     text-align: center;
 }
 
-/* .services-intro h1::after{
-    content: '';
-    width: 56px;
-    height: 2px;
+.services-intro p{
+  font-size: 12px; 
+  margin-top: 20px; 
+}
+
+.services-grid{
+    background-color: white;
+    z-index: 100;
+    box-shadow: 0 10px 10px -10px rgb(202, 200, 200);
+    padding: 20px;
+    align-items: center;
+    border-radius: 10px;
+}
+.services-grid p{
+    font-size: 12px;
+}
+
+.services-grid-img{
+    /* max-width: 35px; */
+    width: 35px;
+    height: 35px;
+    margin-bottom: 20px;
+}
+
+.services-grid-img img{
+    width: 100%;
+}
+.services-img{
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 1.5rem;
+   
+}
+
+.bg-element{
     position: absolute;
-    background-color: var(--gray);
-    bottom: 0;
-    left: 0;
-} */
+    left: -150px;
+    top: 200px;
+    opacity: 0.4;
+    z-index: -100;
+}
+
+/*healthcare section*/
+.healthcare, .mobile-app{
+    display: flex;
+    align-items: center;
+    margin-top: 70px;
+}
+
+.health{
+margin-right: 70px;
+max-width: 500px;
+}
+
+.health img{
+    width: 100%;
+}
+
+.healthcare-text h2, .mobile-text h2{
+    text-align: left;
+}
+.healthcare-text p, .mobile-text p{
+    font-size: 12px;
+    margin-top: 20px;
+}
+
+.healthcare-text a{
+    display: block;
+}
+
+/* mobile app section */
+.mobile-img{
+    max-width: 600px;
+    margin-left: 70px;
+}
+
+.mobile-img img{
+    width: 100%;
+}
+
+/* founder section */
+.founder{
+    width: 70%;
+    margin: 30px auto;
+    margin-top: 70px;
+   background-image: linear-gradient(to right, rgba(69, 143, 246, 1), rgba(69, 143, 246, 0.5));
+   padding: 25px;
+   color: white;
+   border-radius: 10px;
+    
+    /* linear-gradient(to right, var(--blue), rgba(69, 143, 246, 0.8)); */
+}
+
+.founder h2{
+    text-align: center;
+}
+
+.founder-intro{
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.founder-introtext{
+    display: flex;
+    margin-right: 50px;
+    align-items: center;
+    flex: 1;
+}
+
+.founder-img{
+    max-width: 70px;
+}
+
+.founder-img img{
+    width: 100%;
+}
+.founder-head{
+    margin-left: 30px;
+}
+
+.founder-head p{
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+.founder-text{
+    flex: 1;
+    font-size: 12px;
+}
 
 /* media queries */
 @media (max-width:768px) {
@@ -172,9 +305,22 @@ header nav{
 header .open-slide{
     display: contents;
 }
+
+.founder-intro{
+    flex-direction: column;
+}
+
+.founder-text{
+    margin-top: 15px;
+}
+
 }
 
 @media (max-width: 576px){
+body{
+    overflow-x: hidden;
+}
+
  .intro{
     flex-direction: column;
  }
@@ -192,4 +338,75 @@ header .open-slide{
  .intro-img img{
 width: 100%;
  }
+
+ .services-img{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.services-grid-img{
+    margin: 10px auto 25px;
+}
+
+.bg-element{
+    /* opacity: 0.3;
+    left: -250px;
+    top: 400px; */
+    display: none;
+}
+
+.btn{
+    margin: 20px auto;
+}
+
+/* healthcare section */
+.healthcare{
+    flex-direction: column-reverse;
+    margin-top: 20px;
+}
+
+.healthcare-text{
+text-align: center;
+}
+
+.healthcare-text h2, .mobile-text h2{
+    text-align: center;
+}
+
+.mobile-app{
+    flex-direction: column;
+    
+}
+
+.mobile-img, .health{
+    display: block;
+   margin: 0 auto;
+}
+
+.healthcare, .mobile-app{
+    margin: 70px 0 0;
+}
+
+.founder{
+    text-align: center;
+}
+.founder-introtext{
+    flex-direction: column;
+    margin: 0 auto;
+}
+
+.founder-head{
+    text-align: center;
+    margin: 0 auto;
+}
+.founder-img img{
+    display: block;
+    width: 50px;
+    height: auto;
+}
+/* .founder-img img{
+    width: 100%;
+} */
+
 }
